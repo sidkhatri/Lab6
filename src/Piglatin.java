@@ -28,10 +28,11 @@ public class Piglatin {
 	private static String piggifiedSentence(String sentence) {
 		String end = "";
 		String delims = "\\s+"; // separates the sentence into words at the spaces
+		sentence = sentence.toLowerCase();
 		String[] words = sentence.split(delims); // sentence is split into words (using split method) and then placed
 													// into an array.
 		for (int i = 0; i < words.length; i++) { // this for loop will go through all of the words in the array
-			if (isVowel(words[i].toLowerCase().charAt(0))) {
+			if (isVowel(words[i].charAt(0))) {
 				end += words[i] + "way"; // if word begins w/ a vowel, it just adds way to the word
 			} else {
 				end += words[i].substring(1) + words[i].substring(0, 1) + "ay";
